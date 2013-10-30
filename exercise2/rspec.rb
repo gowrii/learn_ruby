@@ -1,9 +1,19 @@
 class Changer
-def initialize(coins)
-@coins = coins
+def self.make_change(coins)
+change = []
+ quater = coins/25
+ dime = (coins%25)/10
+ nickle = ((coins%25)%10)/5
+ penny = ((coins%25)%10)%5
+
+ quater.times {change << 25}
+ dime.times {change << 10}
+ nickle.times{change << 5}
+ penny.times{change << 1}
+ return change
 end
-def make_change
-	
+ 
+ 	
 end
 
-end
+
